@@ -1,0 +1,97 @@
+SELECT
+    *
+FROM
+    `students`
+WHERE
+    YEAR(`date_of_birth`) = 1990;
+
+---------------------------------------------------------------------
+SELECT
+    *
+FROM
+    `courses`
+WHERE
+    `cfu` > 10;
+
+---------------------------------------------------------------------
+SELECT
+    *
+FROM
+    `students`
+WHERE
+    `date_of_birth` < '1994-07-01';
+
+---------------------------------------------------------------------
+SELECT
+    *
+FROM
+    `courses`
+WHERE
+    `period` = 'I semestre' AND `year` = 1;
+
+---------------------------------------------------------------------
+SELECT
+    *
+FROM
+    `exams`
+WHERE
+    `hour` > '14%' AND `date` = '2020-06-20';
+
+---------------------------------------------------------------------
+SELECT
+    *
+FROM
+    `degrees`
+WHERE
+    `level` = 'Magistrale';
+
+---------------------------------------------------------------------
+SELECT
+    COUNT(*)
+FROM
+    `departments`;
+
+---------------------------------------------------------------------
+SELECT
+    COUNT(*)
+FROM
+    `teachers`
+WHERE
+    `phone` IS NULL;
+
+---------------------------------------------------------------------
+INSERT INTO `students`(
+    degree_id,
+    NAME,
+    surname,
+    date_of_birth,
+    fiscal_code,
+    enrolment_date,
+    registration_number,
+    email
+)
+VALUES(
+    '',
+    'Francesco',
+    'Rispoli',
+    '2003-07-17',
+    '12345rtyolmeohyt',
+    '2023-09-13',
+    '',
+    'rispolifrancesco997@gmail.com'
+);
+
+---------------------------------------------------------------------
+UPDATE
+    teachers
+SET
+    office_number = '126'
+WHERE NAME
+    = 'pietro' AND surname = 'rizzo';
+
+---------------------------------------------------------------------
+DELETE
+    students
+WHERE NAME
+    ='Francesco';
+---------------------------------------------------------------------
